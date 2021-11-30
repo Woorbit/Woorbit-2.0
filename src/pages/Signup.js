@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
-import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
-import {doc, setDoc} from 'firebase/firestore';
+import {getAuth, createUserWithEmailAndPassword, updateProfile,sendEmailVerification} from 'firebase/auth';
 import {Form, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-import {db} from '../config/firebase';
 
 export default function Signin() {
 
     const [name,setName] = useState('');
 	const [email,setEmail] = useState('');
-	const [phone,setPhone] = useState('');
 	const [password,setPassword] = useState('');
 	const auth = getAuth();
 
 	async function handleSubmit(e){
 		e.preventDefault();
-		if(!email || !password || !phone || !name ) return;
+		if(!email || !password || !name ) return;
 		try{
 			await createUserWithEmailAndPassword(auth,email,password);
             await updateProfile(auth.currentUser,{displayName:name});
-            const docRef = doc(db,"users",auth.currentUser.reloadUserInfo.localId);
-            await setDoc(docRef,{phoneNumber:phone})
+            await sendEmailVerification(auth.currentUser)
 		}catch(err){console.log(err)}
 	}
     
@@ -35,8 +31,6 @@ export default function Signin() {
 			  </Form.Group>
 
 			  <Form.Group className="mb-3" controlId="formBasicPassword">
-			    <Form.Label>Number</Form.Label>
-			    <Form.Control type="tel" placeholder="Mobile number" value={phone} onChange={({target})=>setPhone(target.value)}/>
 			    <Form.Label>Password</Form.Label>
 			    <Form.Control type="password" placeholder="Password" value={password} onChange={({target})=>setPassword(target.value)}/>
 			  </Form.Group>

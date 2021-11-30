@@ -3,25 +3,11 @@ import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
-import Header from './sections/header'
-import Services from './sections/service'
-import About from './sections/about'
-import Contact from './sections/contact'
-import Footer from './sections/footer'
+import UserInfoForm from './pages/UserInfoForm';
+import Home from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function Home({user}){
-  return (
-    <div className="App">
-            <Header user={user}/> 
-            <About/>
-            <Services/>
-            <Contact/>
-            <Footer/>
-    </div>
-    )
-}
 
 
 function App() {
@@ -31,7 +17,7 @@ function App() {
 
   React.useEffect(()=>{
     onAuthStateChanged(auth,(user)=>{
-      if(user) setUser(user);
+      setUser(user);
     })
   },[auth])
 
@@ -40,8 +26,9 @@ function App() {
     <Router>
       <Routes>     
         <Route path="/" element={<Home user={user} />}/>
-        <Route path="/signin" element={user ? <Navigate to='/' /> : <Signin/> }/>
-        <Route path="signup" element={user ? <Navigate to='/' /> : <Signup/>}/>
+        <Route path="/signin" element={ <Signin/> }/>
+        <Route path="/signup" element={user ? <Navigate to='/signin' /> :<Signup/>}/>
+        <Route path="/form" element={<UserInfoForm/>}/>
       </Routes>
     </Router>
   );

@@ -6,7 +6,7 @@ import Box from './Box';
 
 export default function ContactUs(){
 	return(
-		<Container >
+		<Container  id="contact">
 			<Row>
 				<h6 className="text-align-center section-heading-text mt-5 mb-4">CONTACT</h6>
 			</Row>

@@ -1,10 +1,13 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
+import {getAuth, signOut} from 'firebase/auth';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
 
 export default function TopNav({user}){
 
    const [scrolled,setScrolled] = React.useState(false);
+   const navigate = useNavigate();
+   const auth = getAuth();
 
     React.useEffect(()=>{       
         function onScroll(e){
@@ -24,6 +27,14 @@ export default function TopNav({user}){
     	window.scrollTo(0,0);
     }
 
+    async function handleAuth(){
+    	if(user){
+    		await signOut(auth);
+    		return;
+    	}
+    	navigate('/signin');
+    }
+
 
     const NavStyle = scrolled ? {backgroundColor:"white",
                                  boxShadow:"0px 6px 13px -12px rgba(0,0,0,0.75)",
@@ -39,12 +50,11 @@ export default function TopNav({user}){
 		    <Navbar.Brand href="#home">
 		        <img
 		          alt="logo"
-		          src="/logo.svg"
-		          width="30"
-		          height="30"
+		          src="/logo.png"
+		          width="120"
+		          height="80"
 		          className="d-inline-block align-top"
 		        />{' '}
-		        Woorbit
             </Navbar.Brand>
 		    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 		    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end" >
@@ -53,9 +63,8 @@ export default function TopNav({user}){
 		        <Nav.Link className="m-2 heading-color" href="#services">Services</Nav.Link>
 		        <Nav.Link className="m-2 heading-color" href="#about">About</Nav.Link>
 		        <Nav.Link className="m-2 heading-color" href="#contact">Contact</Nav.Link>
-		        <Button className="btn-color m-2" style={{width:"120px"}} variant="primary">
-		           { user ? <Link to="/" className="text-decoration-none" style={{color:"white"}}>Profile</Link>
-		             : <Link to="/signin" className="text-decoration-none" style={{color:"white"}}>Sign in</Link>}
+		        <Button className="btn-color m-2" style={{width:"120px"}} variant="primary" onClick={handleAuth}>
+		           {user ? 'Signout' : 'Signin'}
 		        </Button>
 		      </Nav>
 		    </Navbar.Collapse>

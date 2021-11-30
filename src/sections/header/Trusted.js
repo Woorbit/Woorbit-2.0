@@ -6,7 +6,7 @@ export default function Trusted(){
 	return(<div>
 		<h5 className="white section-heading-text mb-0 pt-5" >TRUSTED BY</h5>
 		<Carousel className="white">
-		  <Carousel.Item className="h-100">
+		  <Carousel.Item className="h-100" interval={1000}>
 		    <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
 		    	<img
 			      className="d-block w-25"
@@ -15,7 +15,7 @@ export default function Trusted(){
 		        />
 		    </div>
 		  </Carousel.Item>
-		  <Carousel.Item>
+		  <Carousel.Item interval={1000}>
 		     <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
 		    	<img
 			      className="d-block w-25"
@@ -24,7 +24,7 @@ export default function Trusted(){
 		        />
 		    </div>
 		  </Carousel.Item>
-		  <Carousel.Item>
+		  <Carousel.Item interval={1000}>
 		     <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
 		    	<img
 			      className="d-block w-25"

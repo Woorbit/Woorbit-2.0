@@ -5,7 +5,7 @@ import ContactUs from './ContactUs'
 
 export default function Contact(){
 	return(
-		<div id="contact">
+		<div>
 	      <Why/>
 	      <ContactUs/>		
 	    </div>

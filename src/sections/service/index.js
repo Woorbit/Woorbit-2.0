@@ -13,13 +13,22 @@ export default function Services(){
 			<Container>			
 				<Row>
 					<Col className="p-0 d-flex justify-content-center mb-3">
-						<Card/>
+						<Card title="heading 1" img="banner.svg">
+							Fully Criminal verified background of workers and make sure the safety and
+							further conflicts within.
+						</Card>
 					</Col>
 					<Col className="p-0 d-flex justify-content-center mb-3">
-						<Card/>
+						<Card title="heading 2" img="banner.svg">
+							Hightly skilled labours from locals who have experiance in respected field
+							from years.
+						</Card>
 					</Col>
 					<Col className="p-0 d-flex justify-content-center mb-3">
-						<Card/>
+						<Card title="heading 3" img="banner.svg">
+							Good pay, Good work by removing contractors monopoly, we ensure that workers
+							are happy with there wages so the output of labours increse.
+						</Card>
 					</Col>
 				</Row>
 			</Container>
