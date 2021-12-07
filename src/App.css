@@ -15,19 +15,27 @@ body {
 
 
 .btn-color{
-  background-color:#4154f1;
+  background-color:#f75b5b;
   border-width:0;
-  height:45px;
-  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
+  height:42px;
+  box-shadow: 0px 1px 6px #f75b5b;
+}
+
+.btn-color:hover{
+  background-color:#fa8a8a;
+}
+
+.btn-color:focus{
+  background-color:#fa8a8a;
 }
 
 
 .heading-color{
-  color:#012970 !important;
+  color:#9e2c1d !important;
 }
 
 .sub-heading-color{
-  color:#444444;
+  color:#be2e15;
 }
 
 .bottom-right-scroll{
@@ -46,7 +54,7 @@ body {
 }
 
 .carousel-indicators button{
-  background-color:#012970  !important;
+  background-color:#F52C2C  !important;
 }
 
 .section-heading-text{
@@ -72,7 +80,7 @@ body {
 }
 
 .bg-blue-light{
-  background-color:#f6f9ff !important;
+  background-color:#f6eaeb !important;
 }
 
 .text-blue-dark{
@@ -83,7 +91,7 @@ body {
 }
 
 .who-we-cont{
-  border-radius:5px 0 0 5px
+  border-radius:5px 0 0 5px;
 }
 
 .about-card{
@@ -97,7 +105,7 @@ body {
 }
 
 .model-icon-blue svg{
-  color:#4154f1;
+  color:#f75b5b;
   font-size:50px
 }
 
@@ -118,7 +126,6 @@ body {
 
 .small-icon svg{
   font-size:22px !important;
-  color:gray !important;
   margin-right:10px;
 }
 
@@ -128,8 +135,12 @@ body {
 }
 
 a{
-  color:#4154f1 ;
+  color:#FA8A8A ;
   text-decoration:none; 
+}
+
+a:hover{
+  color:#F52C2C ;
 }
 
 
@@ -148,20 +159,14 @@ a{
   .banner h1{
     font-size: 25px !important;
   }
-  .banner{
-    height: 70vh !important;
-  }
 }
 
 @media only screen and (max-width: 810px){
   .banner h1{
   font-size: 55px !important;
   }
-  .footer-img{
-    background-position: 30% !important;
-  }
   .banner{
-    height: 70vh !important;
+    height: 80vh !important;
   }
 }
 
@@ -173,3 +178,27 @@ a{
   box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
 }
 
+.dropdown-menu.show{
+  min-width:7rem !important;
+}
+
+.dropdown-item.active{
+  color:black;
+  background-color:#F5f5f5 !important;
+}
+
+
+
+.mt-5n{
+  margin-top:-6px !important;
+}
+
+
+a > svg{
+  color:#FA8A8A ;
+  text-decoration:none; 
+}
+
+a:hover > svg{
+  color:#F52C2C ;
+}

@@ -5,7 +5,7 @@ import Trusted from './Trusted'
 
 export default function index({user}){
 	return(
-		<div id="home" style={{height:"100%",backgroundColor:"#eef3fd"}}>
+		<div id="home" style={{height:"100%"}} >
 			<Navbar user={user}/>
 			<Banner/>
 			<Trusted/>

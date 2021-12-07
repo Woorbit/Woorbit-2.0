@@ -2,6 +2,7 @@ import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import {getAuth, signOut} from 'firebase/auth';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import Menu from '../../components/Menu';
 
 export default function TopNav({user}){
 
@@ -45,27 +46,31 @@ export default function TopNav({user}){
 
 
 	return(
-		<Navbar style={NavStyle} className="nav-bg" expand="lg" fixed="top">
+		<Navbar style={NavStyle} className="nav-bg pt-0 pb-0" expand="lg" fixed="top">
 		  <Container className="d-flex">
-		    <Navbar.Brand href="#home">
+		    <Navbar.Brand href="#home" className="d-flex">
 		        <img
 		          alt="logo"
 		          src="/logo.png"
-		          width="120"
-		          height="80"
-		          className="d-inline-block align-top"
-		        />{' '}
+		          width="60"
+		          height="50"
+		          className="d-inline-block align-top m-1"
+		        />
+		        <div className="d-flex flex-column justify-content-center">
+		           <h5 className="m-0">Woorbit</h5>
+		           <p className="p-0 m-0" style={{fontSize:"12px"}}>The work orbit</p>
+		        </div>
             </Navbar.Brand>
 		    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 		    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end" >
 		      <Nav>
-		        <Nav.Link className="m-2 heading-color" href="#home">Home</Nav.Link>
-		        <Nav.Link className="m-2 heading-color" href="#services">Services</Nav.Link>
-		        <Nav.Link className="m-2 heading-color" href="#about">About</Nav.Link>
-		        <Nav.Link className="m-2 heading-color" href="#contact">Contact</Nav.Link>
-		        <Button className="btn-color m-2" style={{width:"120px"}} variant="primary" onClick={handleAuth}>
-		           {user ? 'Signout' : 'Signin'}
-		        </Button>
+		        <Nav.Link className="m-2 h6" href="#home">Home</Nav.Link>
+		        <Nav.Link className="m-2 h6" href="#about">About</Nav.Link>
+		        <Nav.Link className="m-2 h6" href="#services">Services</Nav.Link>
+		        <Nav.Link className="m-2 h6" href="#contact">Contact</Nav.Link>
+		        <Nav.Link onClick={ !user && handleAuth} className="m-2 h6">
+		           <Menu innerText={user ? user.displayName : 'Signin'} onSignout={handleAuth} user={user}/>
+		        </Nav.Link>
 		      </Nav>
 		    </Navbar.Collapse>
 		  </Container>

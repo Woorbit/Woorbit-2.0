@@ -5,6 +5,7 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import UserInfoForm from './pages/UserInfoForm';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/signin" element={ <Signin/> }/>
         <Route path="/signup" element={user ? <Navigate to='/signin' /> :<Signup/>}/>
         <Route path="/form" element={<UserInfoForm/>}/>
+        <Route path='/profile' element={<Profile user={user} />}/>
       </Routes>
     </Router>
   );

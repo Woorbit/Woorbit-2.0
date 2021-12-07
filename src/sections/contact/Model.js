@@ -11,7 +11,7 @@ export default function Model({icon,heading,children}){
 				  {icon}	
 				</Col>
 				<Col>
-				  <h4 className="text-blue-dark model-heading">{heading}</h4>
+				  <h4 className="sub-heading-color model-heading">{heading}</h4>
 				  <p className="model-info-text">{children}</p>
 				</Col>
 			</Row>

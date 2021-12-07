@@ -4,33 +4,26 @@ import { Carousel } from 'react-bootstrap';
 
 export default function Trusted(){
 	return(<div>
-		<h5 className="white section-heading-text mb-0 pt-5" >TRUSTED BY</h5>
+		<h5 className="white text-align-center mb-0 pt-5" >OUR CLIENTS</h5>
 		<Carousel className="white">
 		  <Carousel.Item className="h-100" interval={1000}>
 		    <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
-		    	<img
-			      className="d-block w-25"
-			      src="codingninjas.png"
-			      alt="First slide"
-		        />
+		    	<img alt="prestige" src="prestige.png"  />
 		    </div>
 		  </Carousel.Item>
 		  <Carousel.Item interval={1000}>
 		     <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
-		    	<img
-			      className="d-block w-25"
-			      src="codingblocks.png"
-			      alt="First slide"
-		        />
+		    	<img alt="birla" src="birla.jpg" />
 		    </div>
 		  </Carousel.Item>
 		  <Carousel.Item interval={1000}>
 		     <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
-		    	<img
-			      className="d-block w-25"
-			      src="codingblocks.png"
-			      alt="First slide"
-		        />
+		    	<img alt="polar" src="polar.png" />
+		    </div>
+		  </Carousel.Item>
+		  <Carousel.Item interval={1000}>
+		     <div className="d-flex justify-content-center align-items-center" style={{height:"300px"}}>
+		    	<h1>Vihaa trading company</h1>
 		    </div>
 		  </Carousel.Item>
 		</Carousel>

@@ -29,7 +29,7 @@ export default function UserInfoForm(){
         })
         setName(user.displayName);
         setEmail(user.email);
-    },[user,auth.currentUser.reloadUserInfo.localId,navigate])
+    },[user,auth.currentUser?.reloadUserInfo.localId,navigate])
 
     
     async function handleSubmit(e){
@@ -45,45 +45,45 @@ export default function UserInfoForm(){
 		 <div className="vh-100 d-flex justify-content-center align-items-center">
 		 	 <Form className="container w-75 p-4 user-info-form" onSubmit={handleSubmit}>
 			  <Form.Group className="mb-3 row" controlId="formBasicEmail">
-			    <div className="col-4">
+			    <div className="col-md-4 mb-2">
 			    	<Form.Label>Name</Form.Label>
 				    <Form.Control type="text" placeholder="name" value={name} disabled/>
 			    </div>
-			    <div className="col-4">
+			    <div className="col-md-4 mb-2">
 			    	<Form.Label>Email</Form.Label>
 			        <Form.Control type="email" placeholder="email" value={email} disabled/>
 			    </div>
-			    <div className="col-4">
+			    <div className="col-md-4 mb-2">
 			    	<Form.Label>Phone Number</Form.Label>
 			        <Form.Control type="text" placeholder="number" value={phoneNumber} onChange={({target})=>setPhoneNumber(target.value)}/>
 			    </div>
 			  </Form.Group>
             
               <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                <div className="mb-3 col-10">
+                <div className="mb-3 col-md-10">
 			    	<Form.Label>Address</Form.Label>
 				    <Form.Control type="text" placeholder="address" value={address} onChange={({target})=>setAddress(target.value)}/>
 			    </div>
-			    <div className="col-2">
+			    <div className="col-md-2 mb-2">
 			    	<Form.Label>Zip code</Form.Label>
 				    <Form.Control type="text" placeholder="zip" value={zip} onChange={({target})=>setZip(target.value)} />
 			    </div>
-			    <div className="col-4">
+			    <div className="col-md-4 mb-2">
 			    	<Form.Label>City</Form.Label>
 				    <Form.Control type="text" placeholder="city" value={city} onChange={({target})=>setCity(target.value)}/>
 			    </div>
-			    <div className="col-4">
+			    <div className="col-md-4 mb-2">
 			    	<Form.Label>State</Form.Label>
 			        <Form.Control type="text" placeholder="state" value={state} onChange={({target})=>setState(target.value)}/>
 			    </div>
-			    <div className="col-4">
+			    <div className="col-md-4 mb-2">
 			    	<Form.Label>Country</Form.Label>
 			        <Form.Control type="text" placeholder="country" value={country} onChange={({target})=>setCountry(target.value)}/>
 			    </div>
 			  </Form.Group>
 
 			  <Form.Group className="mb-3 row" controlId="formBasicEmail">
-			    <div className="col-4">
+			    <div className="col-md-4">
 			    	<label for="exampleFormControlSelect1">Gender</label>
 				    <select class="form-control" id="exampleFormControlSelect1" value={gender} onChange={({target})=>setGender(target.value)}>
 				      <option value="male">Male</option>
