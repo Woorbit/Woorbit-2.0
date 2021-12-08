@@ -35,12 +35,12 @@ export default function Signin() {
 	}
     
 	return (
-		<div className="wh-100 vh-100 d-flex flex-column justify-content-center align-items-center" style={{backgroundColor:'#f5f5f5'}}>
+		<div className="vh-100 d-flex justify-content-center align-items-center" style={{backgroundColor:'#f5f5f5'}}>
             <Card>
             	<Container className="container p-4" >
 	            	<Row>
-	            	   <Col sm={12} md={7} className='d-flex align-items-center justify-content-center'>
-	            	      <img src="login.svg"  alt="login" width={450}/>
+	            	   <Col sm={12} md={7} className='mb-2 d-flex align-items-center justify-content-center'>
+	            	      <img src="login.svg"  alt="login" style={{width:'100%'}}/>
 	            	   </Col>
 	            	   <Col sm={12} md={5}>
 	            	   	 <Form onSubmit={handleSubmit}>

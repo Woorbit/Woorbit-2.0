@@ -18,13 +18,13 @@ export default function Why(){
 				<Col >
 					<Container>
 						<Row>
-							<Col>
+							<Col xs={12} md={6}>
 							   <Model icon={<FaHandshake/>} heading="Trust First Approch">
 							    Woorbit believes trust is first thing which we earn from our client
 							    everything comes later.
 							   </Model>
 							</Col>
-							<Col>
+							<Col xs={12} md={6}>
 							   <Model icon={<AiOutlineFieldTime/>} heading="Tech Support">
 							    We provide 24/7 tech support to the industries, out 24/7 services
 							    is execptionally perfect and help industries to enhance there outcome

@@ -15,6 +15,7 @@ export default function UserInfoForm(){
     const [city,setCity] = React.useState('');
     const [state,setState] = React.useState('');
     const [country,setCountry] = React.useState('');
+    const [companyName,setCompanyName] = React.useState('');
     const [gender,setGender] = React.useState('male');
     const navigate = useNavigate();
 	const auth = getAuth();
@@ -25,7 +26,17 @@ export default function UserInfoForm(){
     	if(user === null) return;
     	const docRef = doc(db,"users",auth.currentUser.reloadUserInfo.localId)
         getDoc(docRef).then((snap)=>{
-        	if(snap.exists()) navigate('/');
+        	if(snap.exists()){
+        	    const {phoneNumber,address,zip,city,state,country,companyName,gender} = snap.data();	
+        		setPhoneNumber(phoneNumber);
+        		setAddress(address);
+        		setZip(zip);
+        		setCity(city);
+        		setState(state);
+        		setCountry(country);
+        		setCompanyName(companyName);
+        		setGender(gender);
+        	}
         })
         setName(user.displayName);
         setEmail(user.email);
@@ -36,14 +47,14 @@ export default function UserInfoForm(){
     	e.preventDefault();
     	if(user === null) return;
     	const docRef = doc(db,"users",auth.currentUser.reloadUserInfo.localId)
-        await setDoc(docRef,{address,zip,city, state, country, gender,phoneNumber});
+        await setDoc(docRef,{address,zip,city, state, country, gender,phoneNumber,companyName});
         navigate('/');
     }
 
 
 	return(
-		 <div className="vh-100 d-flex justify-content-center align-items-center">
-		 	 <Form className="container w-75 p-4 user-info-form" onSubmit={handleSubmit}>
+		 <div className="vh-100 d-flex justify-content-center align-items-center" style={{backgroundColor:'#f5f5f5'}}>
+		 	 <Form className="container p-4 user-info-form" onSubmit={handleSubmit}>
 			  <Form.Group className="mb-3 row" controlId="formBasicEmail">
 			    <div className="col-md-4 mb-2">
 			    	<Form.Label>Name</Form.Label>
@@ -83,14 +94,18 @@ export default function UserInfoForm(){
 			  </Form.Group>
 
 			  <Form.Group className="mb-3 row" controlId="formBasicEmail">
-			    <div className="col-md-4">
+			    <div className="col-md-4 mb-2">
 			    	<label for="exampleFormControlSelect1">Gender</label>
 				    <select class="form-control" id="exampleFormControlSelect1" value={gender} onChange={({target})=>setGender(target.value)}>
 				      <option value="male">Male</option>
 				      <option value="female">Female</option>
 				      <option value="other">Other</option>
 				    </select>
-			    </div>		    
+			    </div>	
+			     <div className="col-md-4 mb-2">
+			    	<Form.Label>Company Name</Form.Label>
+			        <Form.Control type="text" placeholder="Company Name" value={companyName} onChange={({target})=>setCompanyName(target.value)}/>
+			    </div>	    
 			  </Form.Group>
 			
 			  <Button variant="primary" type="submit">
