@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Woorbit/Woorbit-2.0/static/css/main.2f50dc38.chunk.css",
-    "main.js": "/Woorbit/Woorbit-2.0/static/js/main.ce87951b.chunk.js",
-    "main.js.map": "/Woorbit/Woorbit-2.0/static/js/main.ce87951b.chunk.js.map",
-    "runtime-main.js": "/Woorbit/Woorbit-2.0/static/js/runtime-main.3078450f.js",
-    "runtime-main.js.map": "/Woorbit/Woorbit-2.0/static/js/runtime-main.3078450f.js.map",
-    "static/css/2.0a9ec390.chunk.css": "/Woorbit/Woorbit-2.0/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.da612f57.chunk.js": "/Woorbit/Woorbit-2.0/static/js/2.da612f57.chunk.js",
-    "static/js/2.da612f57.chunk.js.map": "/Woorbit/Woorbit-2.0/static/js/2.da612f57.chunk.js.map",
-    "index.html": "/Woorbit/Woorbit-2.0/index.html",
-    "static/css/2.0a9ec390.chunk.css.map": "/Woorbit/Woorbit-2.0/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.2f50dc38.chunk.css.map": "/Woorbit/Woorbit-2.0/static/css/main.2f50dc38.chunk.css.map",
-    "static/js/2.da612f57.chunk.js.LICENSE.txt": "/Woorbit/Woorbit-2.0/static/js/2.da612f57.chunk.js.LICENSE.txt"
+    "main.css": "/Woorbit-2.0/static/css/main.2f50dc38.chunk.css",
+    "main.js": "/Woorbit-2.0/static/js/main.4d271dca.chunk.js",
+    "main.js.map": "/Woorbit-2.0/static/js/main.4d271dca.chunk.js.map",
+    "runtime-main.js": "/Woorbit-2.0/static/js/runtime-main.e53448f1.js",
+    "runtime-main.js.map": "/Woorbit-2.0/static/js/runtime-main.e53448f1.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/Woorbit-2.0/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.2ac8903d.chunk.js": "/Woorbit-2.0/static/js/2.2ac8903d.chunk.js",
+    "static/js/2.2ac8903d.chunk.js.map": "/Woorbit-2.0/static/js/2.2ac8903d.chunk.js.map",
+    "index.html": "/Woorbit-2.0/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/Woorbit-2.0/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.2f50dc38.chunk.css.map": "/Woorbit-2.0/static/css/main.2f50dc38.chunk.css.map",
+    "static/js/2.2ac8903d.chunk.js.LICENSE.txt": "/Woorbit-2.0/static/js/2.2ac8903d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3078450f.js",
+    "static/js/runtime-main.e53448f1.js",
     "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.da612f57.chunk.js",
+    "static/js/2.2ac8903d.chunk.js",
     "static/css/main.2f50dc38.chunk.css",
-    "static/js/main.ce87951b.chunk.js"
+    "static/js/main.4d271dca.chunk.js"
   ]
 }
